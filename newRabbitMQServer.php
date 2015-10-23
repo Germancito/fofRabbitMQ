@@ -18,8 +18,9 @@ function returnSteamUser(){
 	//return array containing steam user informaton (avatar, etc.)
 }
 
-function returnFriendlist(){
-	return true;
+function returnFriendlist($input){
+	$steamid = $input['id']
+	return showFriends(steamid);
 	//lookup steamID in database
 	//return friendlist data containing returnSteamUser() data	
 }
@@ -54,11 +55,11 @@ function requestProcessor($request)
   }
   switch ($request['type'])
   {
-    case "steam_user":
-      return returnSteamUser($request['username'],$request['password']);
+    //case "steam_user":
+      //return returnSteamUser($request['username'],$request['password']);
     case "friendlist":
-      return returnFriendlist($request['username'],$request['password']);
-    case "new_account":
+      return returnFriendlist($request);
+    /*case "new_account":
       return doCreateAccount($request['username'],$request['password']);
     case "login":
       return doLogin($request['username'],$request['password']);
@@ -68,7 +69,7 @@ function requestProcessor($request)
       return doCompareSteamData($request['username'],$request['password']);
     case "collect":
       return doCollectSteamUser($request['username'],$request['password']);
-
+*/
   }
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }

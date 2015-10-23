@@ -46,9 +46,20 @@ function getFriends{
         //$request['']="";
         $response = $client->send_request($request);
 
-        echo "client received response: ".PHP_EOL;
-        print_r($response);
-        echo "\n\n";
+        foreach($request as $friend){
+		$avatar = $friend['avatar']
+		$fName = $friend['fName']
+                echo "<img src=$avatar>";
+                echo "\r\n";
+                echo $fName;
+                echo "<br>";
+        }
+
+
+
+//        echo "client received response: ".PHP_EOL;
+//        print_r($response);
+//        echo "\n\n";
 
 }
 
