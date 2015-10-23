@@ -4,9 +4,10 @@ require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
+//$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
 
-function checkLogin{
-        $client = new rabbitMQClient("newRabbitMQ.ini","newServer");
+function checkLogin(){
+//        $client = new rabbitMQClient("newRabbitMQ.ini","newServer");
         
         //create array, include type (decides switch option for server)
         //add necessary data for functions in additional array slots
@@ -22,19 +23,19 @@ function checkLogin{
 
 }
 
-function registerUser{
+function registerUser(){
 	//
-	$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
+//	$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
 
 }
 
-function getSteamUser{
+function getSteamUser(){
 	//
-	$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
+//	$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
 
 }
 
-function getFriends{
+function getFriends(){
         $client = new rabbitMQClient("newRabbitMQ.ini","newServer");
 
         //create array, include type (decides switch option for server)
@@ -47,8 +48,8 @@ function getFriends{
         $response = $client->send_request($request);
 
         foreach($request as $friend){
-		$avatar = $friend['avatar']
-		$fName = $friend['fName']
+		$avatar = $friend['avatar'];
+		$fName = $friend['fName'];
                 echo "<img src=$avatar>";
                 echo "\r\n";
                 echo $fName;
@@ -65,7 +66,9 @@ function getFriends{
 
 $client = new rabbitMQClient("newRabbitMQ.ini","newServer");
 
-$request = array();
+getFriends();
+
+//$request = array();
 
 /*
 if (isset($argv[1]))
