@@ -41,7 +41,8 @@ function getFriends{
         //add necessary data for functions in additional array slots
         //send request
         $request = array();
-        $request['type'] = "Login";
+        $request['type'] = "friendlist";
+	$request['id'] = "steamid";
         //$request['']="";
         $response = $client->send_request($request);
 
