@@ -6,8 +6,19 @@ require_once('rabbitMQLib.inc');
 
 
 function checkLogin{
-	//
-	$client = new rabbitMQClient("newRabbitMQ.ini","newServer");
+        $client = new rabbitMQClient("newRabbitMQ.ini","newServer");
+        
+        //create array, include type (decides switch option for server)
+        //add necessary data for functions in additional array slots
+        //send request
+        $request = array();
+        $request['type'] = "Login";
+        //$request['']="";
+        $response = $client->send_request($request);
+        
+        echo "client received response: ".PHP_EOL;
+        print_r($response);
+        echo "\n\n";
 
 }
 
