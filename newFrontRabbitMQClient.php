@@ -57,9 +57,9 @@ function getFriends{
 
 
 
-//        echo "client received response: ".PHP_EOL;
-//        print_r($response);
-//        echo "\n\n";
+        echo "client received response: ".PHP_EOL;
+        print_r($response);
+        echo "\n\n";
 
 }
 
