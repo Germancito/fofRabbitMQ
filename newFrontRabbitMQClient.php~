@@ -15,7 +15,7 @@ function checkLogin($name, $pwd){
 	);
 	
 	$response = $client->send_request($request);
-	//can it return true or false instead of the mirrored array?
+	//can it return true or false instead of array?
 /*
 	if($reponse){
 		echo "You have logged on... Loading friend's list.";
